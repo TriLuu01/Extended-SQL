@@ -1,10 +1,10 @@
 # Extended-SQL
 For any given MF or EMF query input the program generates an equivalent python file that computes a single scan of the db and calculates the mf or emf equivalence of the result in java
 
-#Introduction
+# Introduction
 We are aiming to build a Query Processing Engine for Ad-Hoc OLAP queries by extending the group by statement and adding new such that clause
 
-#Advantages
+# Advantages
 • Succinct
 • Easy to maintain
 • Easy to understand for non-technical person
@@ -12,7 +12,7 @@ We are aiming to build a Query Processing Engine for Ad-Hoc OLAP queries by exte
 • Scalable
 • Any MF/EMF query can be converted to 6 operands
 
-#Input Files and Query Structure
+# Input Files and Query Structure
 • Grouping Attributes (V)
 • Number of Grouping variables (n)
 • Projected Attributes (S)
@@ -20,7 +20,7 @@ We are aiming to build a Query Processing Engine for Ad-Hoc OLAP queries by exte
 • Such that Conditions ([C])
 • Where clause
 • Having Condition (G)
-#Sample Query
+# Sample Query
 
 ```cust, prod, count_1_quant, min_1_quant, max_1_quant, avg_1_quant, sum_1_quant
 prod, count_1_quant, count_2_quant
@@ -55,7 +55,7 @@ Select q1.prod, q2.count_1_quant, q3.count_2_quant
 From q1 natural join q2 natural join q3
 Order by prod
 ```
-#Limitations
+# Limitations
 • The operands are read from a file instead of a UI. The files is structured to take operands in a certain format. Slightest deviation from this format can cause errors and/or incorrect output
 • We are using the 6 operands instead of Extended-SQL
 • The project scope is only limited to the sales table because it doesn’t let the user to input which table to run the queries
